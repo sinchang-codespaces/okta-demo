@@ -1,7 +1,7 @@
 import { OktaAuth, OktaAuthOptions } from '@okta/okta-auth-js'
 
 const defaultOktaAuthOptions: OktaAuthOptions = {
-  clientId: '0oa1m7abzpwIcrAES0h8',
+  clientId: import.meta.env.VITE_CLIENT_ID as string,
   scopes: ['openid', 'profile', 'email'],
   pkce: true,
   devMode: false,

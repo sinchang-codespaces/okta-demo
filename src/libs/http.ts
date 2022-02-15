@@ -46,7 +46,7 @@ class Http {
 
   initHttp() {
     const http = axios.create({
-      baseURL: 'https://backoffice-promosapi.backoffice.iherbtest.net',
+      baseURL: import.meta.env.VITE_USER_API_HOST as string,
       headers,
       withCredentials: true,
     })
