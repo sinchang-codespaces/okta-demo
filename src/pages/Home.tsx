@@ -1,29 +1,22 @@
-import React from 'react'
-import { useOktaAuth } from '@okta/okta-react'
+import { useEffect, useState } from 'react'
+import { Header } from '../components/Header'
+import { User, fetchUser } from '../services/users.service'
 
 export const Home = () => {
-  const { oktaAuth, authState } = useOktaAuth()
+  const [user, setUser] = useState<User>()
 
-  const login = async () => oktaAuth.signInWithRedirect()
-  const logout = async () => oktaAuth.signOut('/')
+  useEffect(() => {
+    const fetchData = async () => {
+      const user = await fetchUser()
+      setUser(user)
+    }
 
-  if (!authState) {
-    return <div>Loading...</div>
-  }
-
-  if (!authState.isAuthenticated) {
-    return (
-      <div>
-        <p>Not Logged in yet</p>
-        <button onClick={login}>Login</button>
-      </div>
-    )
-  }
-
+    fetchData()
+  }, [])
   return (
-    <div>
-      <p>Logged in!</p>
-      <button onClick={logout}>Logout</button>
-    </div>
+    <>
+      <Header />
+      <p>Welcome Home Page, {user?.displayName}</p>
+    </>
   )
 }
