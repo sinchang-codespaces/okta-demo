@@ -5,6 +5,7 @@ import { Route, useHistory } from 'react-router-dom'
 import { Home } from './pages/Home'
 import { About } from './pages/About'
 import { Auth } from './libs/auth'
+import { Header } from './components/Header'
 
 function App() {
   const history = useHistory()
@@ -41,6 +42,7 @@ function App() {
       restoreOriginalUri={restoreOriginalUri}
       onAuthRequired={customAuthHandler}
     >
+      <Header />
       <SecureRoute exact path='/' component={Home} />
       <SecureRoute exact path='/about' component={About} />
       <Route

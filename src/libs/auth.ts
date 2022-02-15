@@ -15,7 +15,7 @@ interface IOktaAuth {
   init: () => OktaAuth
   getAccessToken: () => string | undefined
 }
-console.log(import.meta)
+
 export const Auth: IOktaAuth = {
   client: null,
   init: () => {

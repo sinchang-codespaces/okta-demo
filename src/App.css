@@ -1,3 +1,27 @@
-.App {
+#root {
   text-align: center;
+  padding: 20px;
+}
+
+.nav,
+.nav-right {
+  display: flex;
+}
+
+.nav {
+  justify-content: space-between;
+}
+
+.nav-right div {
+  margin-left: 10px;
+}
+
+button,
+[type='button'],
+[type='reset'],
+[type='submit'] {
+  -webkit-appearance: button;
+  background-color: #fff;
+  border: 1px solid #000;
+  cursor: pointer;
 }

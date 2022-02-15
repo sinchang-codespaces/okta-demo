@@ -1,22 +1,12 @@
-import { useEffect, useState } from 'react'
-import { Header } from '../components/Header'
-import { User, fetchUser } from '../services/users.service'
+import { Link } from 'react-router-dom'
 
 export const Home = () => {
-  const [user, setUser] = useState<User>()
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const user = await fetchUser()
-      setUser(user)
-    }
-
-    fetchData()
-  }, [])
   return (
     <>
-      <Header />
-      <p>Welcome Home Page, {user?.displayName}</p>
+      <p>Welcome Home Page</p>
+      <p>
+        <Link to='/about'>Go to About page</Link>
+      </p>
     </>
   )
 }
