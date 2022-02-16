@@ -32,7 +32,7 @@ export const Header = () => {
     <div className='nav'>
       <div className='nav-left'>Okta Demo</div>
       <div className='nav-right'>
-        <div className='username'>{user?.displayName}</div>
+        <div className='username'>{user?.name}</div>
         <div>
           <button id='logout-button' onClick={logout}>
             Logout
