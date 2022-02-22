@@ -24,21 +24,19 @@ export const Header = () => {
     }
   }
 
-  if (!authState?.isAuthenticated) {
-    return null
-  }
-
   return (
     <div className='nav'>
       <div className='nav-left'>Okta Demo</div>
-      <div className='nav-right'>
-        <div className='username'>{user?.name}</div>
-        <div>
-          <button id='logout-button' onClick={logout}>
-            Logout
-          </button>
+      {authState?.isAuthenticated ? (
+        <div className='nav-right'>
+          <div className='username'>{user?.name}</div>
+          <div>
+            <button id='logout-button' onClick={logout}>
+              Logout
+            </button>
+          </div>
         </div>
-      </div>
+      ) : null}
     </div>
   )
 }
