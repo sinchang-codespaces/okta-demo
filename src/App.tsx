@@ -3,8 +3,7 @@ import { Security, LoginCallback, SecureRoute } from '@okta/okta-react'
 import { OktaAuth, toRelativeUrl } from '@okta/okta-auth-js'
 import { Route, useHistory } from 'react-router-dom'
 import { Home } from './pages/Home'
-import { About } from './pages/About'
-import { Public } from './pages/Public'
+import { Protected } from './pages/Protected'
 import { Auth } from './libs/auth'
 import { Header } from './components/Header'
 
@@ -44,9 +43,8 @@ function App() {
       onAuthRequired={customAuthHandler}
     >
       <Header />
-      <SecureRoute exact path='/' component={Home} />
-      <SecureRoute exact path='/about' component={About} />
-      <Route exact path='/public' component={Public} />
+      <Route exact path='/' component={Home} />
+      <SecureRoute exact path='/protected' component={Protected} />
       <Route
         path='/login/callback'
         render={(props: any) => (

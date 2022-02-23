@@ -16,13 +16,9 @@ export const Header = () => {
     fetchData()
   }, [authState?.isAuthenticated])
 
-  const logout = async () => {
-    try {
-      await oktaAuth.signOut()
-    } catch (err) {
-      throw err
-    }
-  }
+  const logout = async () => oktaAuth.signOut()
+
+  const login = async () => oktaAuth.signInWithRedirect()
 
   return (
     <div className='nav'>
@@ -36,7 +32,11 @@ export const Header = () => {
             </button>
           </div>
         </div>
-      ) : null}
+      ) : (
+        <button id='logout-button' onClick={login}>
+          Login
+        </button>
+      )}
     </div>
   )
 }

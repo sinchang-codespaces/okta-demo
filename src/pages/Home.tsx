@@ -9,14 +9,9 @@ export const Home = () => {
         alt='cover image'
         style={{ width: '600px' }}
       />
-      <ul>
-        <li>
-          <Link to='/about'>Go to About page</Link>
-        </li>
-        <li>
-          <Link to='/public'>Go to Public page</Link>
-        </li>
-      </ul>
+      <p>
+        <Link to='/protected'>Go to Protected page</Link>
+      </p>
     </>
   )
 }
