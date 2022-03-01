@@ -1,3 +1,3 @@
 export const Protected = () => {
-  return <p>Welcome Protected Page</p>
+  return <p>Welcome the protected page</p>
 }
