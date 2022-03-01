@@ -33,7 +33,7 @@ export const Header = () => {
           </div>
         </div>
       ) : (
-        <button id='logout-button' onClick={login}>
+        <button id='login-button' onClick={login}>
           Login
         </button>
       )}
